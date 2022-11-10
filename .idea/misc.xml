@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Bruger/AndroidStudioProjects/PizzaApp/app/src/main/res/layout/activity_main.xml" value="0.276268115942029" />
+        <entry key="..\:/Users/Bruger/AndroidStudioProjects/PizzaApp/app/src/main/res/layout/app_bar_main.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Bruger/AndroidStudioProjects/PizzaApp/app/src/main/res/layout/content_main.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/Bruger/AndroidStudioProjects/PizzaApp/app/src/main/res/layout/fragment_beverage.xml" value="0.33" />
+        <entry key="..\:/Users/Bruger/AndroidStudioProjects/PizzaApp/app/src/main/res/layout/fragment_beverage_list.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/Bruger/AndroidStudioProjects/PizzaApp/app/src/main/res/layout/fragment_burger.xml" value="0.276268115942029" />
+        <entry key="..\:/Users/Bruger/AndroidStudioProjects/PizzaApp/app/src/main/res/layout/fragment_burger_list.xml" value="0.3283514492753623" />
+        <entry key="..\:/Users/Bruger/AndroidStudioProjects/PizzaApp/app/src/main/res/layout/fragment_everage_list.xml" value="0.20729166666666668" />
+        <entry key="..\:/Users/Bruger/AndroidStudioProjects/PizzaApp/app/src/main/res/layout/fragment_gallery.xml" value="0.276268115942029" />
+        <entry key="..\:/Users/Bruger/AndroidStudioProjects/PizzaApp/app/src/main/res/layout/fragment_home.xml" value="0.276268115942029" />
+        <entry key="..\:/Users/Bruger/AndroidStudioProjects/PizzaApp/app/src/main/res/layout/fragment_item_list.xml" value="0.2625" />
+        <entry key="..\:/Users/Bruger/AndroidStudioProjects/PizzaApp/app/src/main/res/layout/fragment_pizza.xml" value="0.5" />
+        <entry key="..\:/Users/Bruger/AndroidStudioProjects/PizzaApp/app/src/main/res/layout/fragment_pizza_list.xml" value="0.20729166666666668" />
+        <entry key="..\:/Users/Bruger/AndroidStudioProjects/PizzaApp/app/src/main/res/layout/fragment_slideshow.xml" value="0.276268115942029" />
+        <entry key="..\:/Users/Bruger/AndroidStudioProjects/PizzaApp/app/src/main/res/layout/nav_header_main.xml" value="0.276268115942029" />
+        <entry key="..\:/Users/Bruger/AndroidStudioProjects/PizzaApp/app/src/main/res/menu/activity_main_drawer.xml" value="0.2765625" />
+        <entry key="..\:/Users/Bruger/AndroidStudioProjects/PizzaApp/app/src/main/res/menu/main.xml" value="0.2765625" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

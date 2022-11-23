@@ -19,7 +19,7 @@ public class Order {
         products.add(product);
     }
 
-    public void removeProduc(Product product){
+    public void removeProduct(Product product){
         try {
             products.remove(products.indexOf(product));
         }catch (Exception e){

@@ -16,6 +16,8 @@
         <entry key="..\:/Users/Bruger/AndroidStudioProjects/PizzaApp/app/src/main/res/layout/fragment_item_list.xml" value="0.2625" />
         <entry key="..\:/Users/Bruger/AndroidStudioProjects/PizzaApp/app/src/main/res/layout/fragment_pizza.xml" value="0.5" />
         <entry key="..\:/Users/Bruger/AndroidStudioProjects/PizzaApp/app/src/main/res/layout/fragment_pizza_list.xml" value="0.20729166666666668" />
+        <entry key="..\:/Users/Bruger/AndroidStudioProjects/PizzaApp/app/src/main/res/layout/fragment_shopping_cart_item.xml" value="0.22" />
+        <entry key="..\:/Users/Bruger/AndroidStudioProjects/PizzaApp/app/src/main/res/layout/fragment_shopping_cart_main.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/Bruger/AndroidStudioProjects/PizzaApp/app/src/main/res/layout/fragment_slideshow.xml" value="0.276268115942029" />
         <entry key="..\:/Users/Bruger/AndroidStudioProjects/PizzaApp/app/src/main/res/layout/nav_header_main.xml" value="0.276268115942029" />
         <entry key="..\:/Users/Bruger/AndroidStudioProjects/PizzaApp/app/src/main/res/menu/activity_main_drawer.xml" value="0.2765625" />
@@ -28,5 +30,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.33" />
+      </ProjectState>
+    </option>
   </component>
 </project>

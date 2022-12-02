@@ -1,27 +1,30 @@
 package com.example.pizzaapp.ui.pizza;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.pizzaapp.R;
 import com.example.pizzaapp.databinding.FragmentPizzaBinding;
 import com.example.pizzaapp.models.Product;
-import com.example.pizzaapp.ui.pizza.placeholder.PlaceholderContent.PlaceholderItem;
+import com.example.pizzaapp.models.ShoppingCart;
+import com.example.pizzaapp.ui.burger.BurgerRecyclerViewAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
 import java.util.List;
+// Hadi
+public class PizzaRecyclerViewAdapter extends FirestoreRecyclerAdapter<Product, PizzaRecyclerViewAdapter.ViewHolder> {
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link PlaceholderItem}.
- * TODO: Replace the implementation with code for your data type.
- */
-public class PizzaRecyclerViewAdapter extends RecyclerView.Adapter<PizzaRecyclerViewAdapter.ViewHolder> {
 
-    private final List<Product> pizzas;
 
-    public PizzaRecyclerViewAdapter(List<Product> items) {
-        pizzas = items;
+    public PizzaRecyclerViewAdapter(@NonNull FirestoreRecyclerOptions<Product> options) {
+        super(options);
     }
 
     @Override
@@ -31,20 +34,18 @@ public class PizzaRecyclerViewAdapter extends RecyclerView.Adapter<PizzaRecycler
 
     }
 
-    @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.product = pizzas.get(position);
-        holder.prodcutName.setText(pizzas.get(position).getName());
-        holder.productDescription.setText("Description: "+pizzas.get(position).getDescription());
-        holder.productIngredients.setText("Ingredients: " + pizzas.get(position).getIngredients());
-        holder.prodcutPrice.setText(Double.toString(pizzas.get(position).getPrice()));
-        holder.productWeight.setText(Double.toString(pizzas.get(position).getWeight()));
-    }
+
 
     @Override
-    public int getItemCount() {
-        return pizzas.size();
+    protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull Product model) {
+        holder.product = model;
+        holder.prodcutName.setText(model.getName());
+        holder.productDescription.setText(model.getDescription());
+        holder.productIngredients.setText(model.getIngredients());
+        holder.prodcutPrice.setText(Double.toString(model.getPrice()));
+        holder.productWeight.setText(Double.toString(model.getWeight()));
     }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final TextView prodcutName;
@@ -61,6 +62,14 @@ public class PizzaRecyclerViewAdapter extends RecyclerView.Adapter<PizzaRecycler
             productWeight = binding.productWeight;
             productIngredients = binding.productIngredients;
             productDescription = binding.productDescription;
+
+            itemView.findViewById(R.id.button_order).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    ShoppingCart.getInstance().addProduct(product);
+                }
+            });
         }
 
         @Override

@@ -15,18 +15,23 @@ import android.view.ViewGroup;
 import com.example.pizzaapp.R;
 import com.example.pizzaapp.models.Product;
 import com.example.pizzaapp.repositories.ProductRepository;
+import com.example.pizzaapp.ui.burger.BurgerRecyclerViewAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
 import java.util.List;
 
 /**
  * A fragment representing a list of Items.
  */
+// Hadi
 public class PizzaFragment extends Fragment {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
     private int mColumnCount = 1;
+
+    private PizzaRecyclerViewAdapter adapter;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -69,10 +74,27 @@ public class PizzaFragment extends Fragment {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
 
-            List<Product> pizzas= ProductRepository.getInstance().getAllPizzas();
+            FirestoreRecyclerOptions<Product> options = new FirestoreRecyclerOptions.Builder<Product>()
+                    .setQuery(ProductRepository.getInstance().getAllPizzas(), Product.class)
+                    .build();
 
-            recyclerView.setAdapter(new PizzaRecyclerViewAdapter(pizzas));
+            adapter = new PizzaRecyclerViewAdapter(options);
+
+            recyclerView.setAdapter(adapter);
         }
         return view;
+    }
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        adapter.startListening();
     }
 }

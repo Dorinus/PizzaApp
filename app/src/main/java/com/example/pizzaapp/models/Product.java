@@ -3,6 +3,8 @@ package com.example.pizzaapp.models;
 import java.util.ArrayList;
 import java.util.List;
 
+
+//Dorin
 public class Product {
     private String name;
     private String description;
@@ -16,6 +18,12 @@ public class Product {
     public Product(String name, double price) {
         this.name = name;
         this.price = price;
+    }
+
+    public Product(String name, double price, double weight) {
+        this.name = name;
+        this.price = price;
+        this.weight = weight;
     }
 
     public Product(String name, String description, double price, double weight, String ingredients) {

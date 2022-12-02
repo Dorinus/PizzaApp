@@ -1,9 +1,11 @@
 package com.example.pizzaapp.repositories;
 
 import com.example.pizzaapp.models.Product;
+import com.google.firebase.firestore.Query;
 
 import java.util.List;
 
+// Hadi
 public class ProductRepository {
     private  static ProductRepository instance;
     private ProductDao productDao;
@@ -20,16 +22,15 @@ public class ProductRepository {
         return instance;
     }
 
-    public List<Product> getAllBurgers(){
-        this.productList = productDao.getAllBurgers();
-        return  this.productList;
+    public Query getAllBurgers(){
+        return  productDao.getAllBurgers();
     }
 
-    public List<Product> getAllPizzas(){
+    public Query getAllPizzas(){
         return  productDao.getAllPizzas();
     }
 
-    public List<Product> getAllBeverages(){
+    public Query getAllBeverages(){
         return  productDao.getAllBeverages();
     }
 

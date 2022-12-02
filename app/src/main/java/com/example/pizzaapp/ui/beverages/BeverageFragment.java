@@ -15,19 +15,24 @@ import android.view.ViewGroup;
 import com.example.pizzaapp.R;
 import com.example.pizzaapp.models.Product;
 import com.example.pizzaapp.repositories.ProductRepository;
-import com.example.pizzaapp.ui.beverages.placeholder.PlaceholderContent;
+import com.example.pizzaapp.ui.burger.BurgerRecyclerViewAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
 import java.util.List;
 
 /**
  * A fragment representing a list of Items.
  */
+// Hadi
 public class BeverageFragment extends Fragment {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
     private int mColumnCount = 1;
+
+    private BeverageRecyclerViewAdapter adapter;
+
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -36,8 +41,6 @@ public class BeverageFragment extends Fragment {
     public BeverageFragment() {
     }
 
-    // TODO: Customize parameter initialization
-    @SuppressWarnings("unused")
     public static BeverageFragment newInstance(int columnCount) {
         BeverageFragment fragment = new BeverageFragment();
         Bundle args = new Bundle();
@@ -70,10 +73,29 @@ public class BeverageFragment extends Fragment {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
 
-            List<Product> pizzas= ProductRepository.getInstance().getAllBeverages();
 
-            recyclerView.setAdapter(new BeverageRecyclerViewAdapter(pizzas));
+            FirestoreRecyclerOptions<Product> options = new FirestoreRecyclerOptions.Builder<Product>()
+                    .setQuery(ProductRepository.getInstance().getAllBeverages(), Product.class)
+                    .build();
+
+
+            adapter = new BeverageRecyclerViewAdapter(options);
+
+
+            recyclerView.setAdapter(adapter);
         }
         return view;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        adapter.startListening();
     }
 }
